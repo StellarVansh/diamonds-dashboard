@@ -4,8 +4,8 @@ import  streamlit as st
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("D:\Workspace\Active\Streamlit\diamonds.csv", on_bad_lines="skip")
-
+url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/diamonds.csv"
+df = pd.read_csv(url)
 #Add a st.selectbox() to pick a cut type. Show the selected cut
 ucut = st.selectbox("Pick your CUT", df["cut"].unique())
 st.success(f"you selected the {ucut} cut.")
